@@ -156,7 +156,13 @@ header .header-menus .fa-bars {
 .login_link_msg, .login_msg a:visited {
   color: #d45858;
 }
+.login_link_msg:link, .login_msg a:visited:link {
+  color: #d45858;
+}
 
+.login_link_msg:visited, .login_msg a:visited:visited {
+  color: #d45858;
+}
 /********************************** 
   *       掲示板リスト(index.erb)     *
   ***********************************/
