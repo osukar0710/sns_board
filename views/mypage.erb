@@ -1,0 +1,23 @@
+<div class="msg_inner">
+    <h2 class="home_msg">編集画面</h2>
+</div>
+<form action="/mypage" method="POST" enctype="multipart/form-data">
+<%= csrf_tag %>
+    <div class="form_wrap">
+        <div class="form_inner">
+            <label for="name">名前：</label>
+            <input type="text" name="name" id="name" value="<%= @user['name']%>"/>
+            <label for="email">メールアドレス：</label>
+            <input type="email" name="email" id="email" value="<%= @user['email']%>"/>
+            <label for="password">現在のパスワード：※※※※※※※※　</label>
+            <input type="password" name="password" id="password" value="<%= @user['password']%>"/>
+            <div class= "photo_upload_wrap">
+                <label for="text">アイコン画像:（任意）</label>
+                <input type="file" name="file">
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <input type="submit" value="編集" class="signup_btn">
+        </div>
+    </div>
+</form> 

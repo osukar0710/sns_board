@@ -1,0 +1,26 @@
+<div class="msg_inner">
+    <h2 class="home_msg">新規登録</h2>
+</div>
+<div class="flash_msg">
+    <%= flash[:msg]%>
+</div>
+<form action="/signup" method="POST" enctype="multipart/form-data">
+<%= csrf_tag %>
+    <div class="form_wrap">
+        <div class="form_inner">
+            <label for="name">name :</label>
+            <input type="text" name="name" id="name" />
+            <label for="email">email :</label>
+            <input type="email" name="email" id="email" />
+            <label for="password">password :</label>
+            <input type="password" name="password" id="password"/>
+            <div class= "photo_upload_wrap">
+                <label for="text">アイコン画像:（任意）</label>
+                <input type="file" name="file">
+            </div>
+        </div>
+        <div class="btn_wrap">
+            <input type="submit" value="新規登録" class="signup_btn">
+        </div>
+    </div>
+</form>

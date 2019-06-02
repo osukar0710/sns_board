@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ひとこと掲示板</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <% @header_mypage = '' %>
+    <% @header_login = '' %>
+
+    <% if session[:name].nil?
+        @header_mypage = 'hidden'
+        @header_logout = 'hidden'
+    elsif
+        @header_login = 'hidden'
+    end %>
+    <!----------- モーダウウインドウ ----------->
+    <div class="over_lay" id="overLay">
+        <div class="modal_wrap">
+            <div class="modal_btn_wrap">
+                <span id="modalClose"><i class="far fa-times-circle fa-5x"></i></span>
+            </div>
+            <div class="modal_menu_list">
+                <ul>
+                    <li><a href="/">投稿一覧</a></li>
+                    <li><a href="/create">新規投稿</a></li>
+                    <li class="<%= @header_login%>"><a href="/login">ログイン</a></li>
+                    <li class="<%= @header_mypage%>"><a href="/mypage">マイページ</a></li>
+                    <li class="logout <%= @header_logout%>"><a href="/logout">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!----------- body本文 ----------->
+    <div class="container">
+        <header>
+
+            <div class="header-title">
+                <a href="/">ひとこと掲示板</a>
+            </div>
+            <div class="header-menus">
+                <ul class="header_menu_list">
+                    <li class="<%= @header_logout%>"><a href="/logout">ログアウト</a></li>
+                    <li class="<%= @header_login%>"><a href="/login">ログイン</a></li>
+                    <li class="<%= @header_mypage%>"><a href="/mypage">マイページ</a></li>
+                    <li><a href="/create">新規投稿</a></li>
+                    <li><a href="/">投稿一覧</a></li>
+                </ul>
+                <span id="headerMenuIcon">
+                    <i class="fas fa-bars fa-3x"></i>
+                </span>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <%= yield %>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

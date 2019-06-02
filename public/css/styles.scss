@@ -1,0 +1,484 @@
+/************** 
+*     共通     *
+***************/
+
+html {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  body {
+    background-color: #f5f8fa;
+    margin: 0; 
+  }
+  
+  .container {
+    max-width: 640px;
+    // min-width: 480px;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    &:link {
+      color: #fff;
+    }
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .msg_inner {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .home_msg {
+    color: rgb(156, 150, 150);
+    font-size: 2rem;
+  }
+
+  .flash_msg {
+    color: rgb(206, 98, 98);
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /************** 
+  *   ヘッダー　  *
+  ***************/
+  
+  header {
+    background-color: #3ecdc6;
+    box-shadow: 2px 5px 5px #666;
+    height: 64px;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    .header-title {
+        line-height: 64px;
+        float: left;
+        font-size: 2rem;
+        a {
+          color: #fff;
+        }
+    }
+  
+    .header-menus {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        float: right;
+        height: 64px;
+        ul {
+          display: flex;
+          flex-direction: row-reverse;
+          list-style: none;
+          margin: 0;
+          // height: 64px;
+          li {
+            // float: right;
+            // line-height: 64px;
+            &:nth-child(n + 3) {
+              margin-right: 20px;
+            }
+          }
+        }
+        a {
+          color: #fff;
+        }
+        .fa-bars {
+          color: #fff;
+          display: none;
+          
+        }
+      }
+  }
+
+  /********************************* 
+  *       ログイン、マイページ用       *
+  *********************************/ 
+  
+  .hidden {
+    display: none;
+  }
+  
+  /*-------------- 
+  *  アイコン部分  *
+  ---------------*/
+  
+  .photo_frame {
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: row;
+    // justify-content: flex-start;
+    // align-items: center;
+    width: 100%;
+    img {
+      background: #fff;
+      padding: 15px;
+      box-shadow: 0 -5px 10px 4px #ccc inset;
+      height: 300px;
+      width: 300px;
+    }
+    .profile_info_wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      margin-left: 20px;
+      width: 100%;
+      .name {
+        border-bottom: 1px solid gray;
+      }
+      .count_wrap {
+        p:nth-child(2) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  /*********************************  
+  *      ログイン画面(login.erb)     *
+  **********************************/ 
+  
+  .login_msg {
+    color: rgb(156, 150, 150);
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .login_link_msg, .login_msg a:visited {
+    color: rgb(212, 88, 88);
+  }
+  
+  /********************************** 
+  *       掲示板リスト(index.erb)     *
+  ***********************************/
+  
+  .main {
+    margin-top: 30px;
+    // ユーザー情報
+    p {
+      color: rgb(99, 91, 91);
+      font-size: 1.5rem;
+    }
+    .board_title_wrap {
+      margin-top: 20px;
+      text-align: center;
+      .board_title {
+        color: rgb(156, 150, 150);
+        font-size: 2rem;
+        margin: 0;
+      }
+    }
+    //boardタイトル_end
+
+    ul {
+      width: 100%;
+      padding: 0;
+      li {
+        background-color: #fff;
+        box-shadow: 2px 5px 5px #666;
+        border-radius: 5px;
+        min-height: 96px;
+        padding: 10px;
+        margin-bottom: 10px;
+        span {
+          display: flex;
+          justify-content: flex-start;
+          .list_img {
+            background-size: contain;
+            width: 82px;
+            height: 76px;
+          }
+          .list_inner {
+            color: rgb(99, 91, 91);
+            display: flex;
+            flex-direction: column;
+            padding: 1px;
+            margin-left: 10px;
+            width: 90%;
+            /* タイトル */
+            .list_title {
+              margin: 0 ;
+              width: 100%;
+            }
+            /* 掲示板内容 */
+            .list_text {
+              // border: 1px solid red;
+              font-size:1.5rem;
+              margin-top: 10px;
+              overflow: scroll;
+              word-wrap: break-all;
+              max-width: 390px;
+            }
+          }
+            /*------------------
+            *    いいねマーク    *
+            -------------------*/
+          .likes_btn_wrap {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            width: 96px;
+            margin-right: 5px;
+            span {
+              font-size: 1.5rem;
+              &:first-child {
+                margin-right: 5px;
+              }
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            .heart {
+              color: red;
+              margin-bottom: 5px;
+            }
+            .likes_count {
+              width: 50%;
+            }
+          //.likes_btn_wrap_end
+          }
+
+          .edit_Btn_wrap {
+            display: flex;
+            flex-direction: column-reverse;
+            // justify-content: center;
+            align-items: flex-end;
+            padding:2px;
+            width:90px;
+            button {
+                background-color: #fff;
+                border: 1px solid rgb(133, 128, 128);
+                border-radius: 5px;
+                box-shadow: 0 3px 3px #ccc;
+                color: rgb(49, 45, 45);
+                cursor: pointer;
+                font-size: 1.2rem;
+                margin: 0 auto;
+                width: 48px;
+                &:active {
+                  position: relative;
+                  box-shadow: none;
+                  top: 3px;
+                }
+              }
+          //edit_btn_end
+          }
+        //span_end  
+        }
+      //li_end    
+      }
+    //（ulタグ）_end
+    }
+  // (.main)_end
+  }
+
+  
+  /********************************** 
+  *       投稿画面(create.erb)       *
+  ***********************************/ 
+
+  // フォーム共通
+  .form_wrap {
+    background-color: #fff;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* height: 300px; */
+    // width: 560px;
+    width: 100%;
+    padding: 30px 30px;
+    margin: 0 auto;
+    .form_inner {
+      display: flex;
+      flex-direction: column;
+    }
+    .form_inner {
+        label {
+        font-size: 1.5rem;
+        .alert_msg {
+          color: red;
+        }
+        }
+        input {
+        border: 1px solid #d8dadf;
+        margin-bottom: 10px;
+        padding: 5px;
+        }
+        textarea {
+            font-size: 20px;
+            padding: 10px;
+            min-height: 120px;
+            width: 100%;
+            border: 1px solid #d8dadf;
+            resize: none;
+        }
+    }
+    .btn_wrap {
+        height: 48px;
+        width: 100%;
+    }
+  }
+  
+  .btn {
+    background-color: #3ecdc6;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    height: 36px;
+    width: 120px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    float: right;
+  }
+  
+  /********************************** 
+  *       新規登録(signup.erb)       *
+  ***********************************/ 
+  
+  .photo_upload_wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup_btn {
+    background-color: #3ecdc6;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1.5rem;
+    height: 36px;
+    width: 120px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    float: right;
+  }
+  /********************************** 
+  *           fontawesome           *
+  ***********************************/ 
+// トップへ戻る
+  .back_to_top {
+    position: fixed;
+    bottom: 40px;
+    background-color: #fff;
+    opacity: 0.8;
+    right: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    .fa-hand-point-up {
+      color: #3ecdc6;
+    }
+  }
+
+
+  /********************************** 
+  *          メニューモーダル          *
+  ***********************************/ 
+  .over_lay {
+    z-index: 2;
+    // display:none;
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.75);
+    .modal_wrap {
+      .modal_btn_wrap {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        span {
+          margin-right: 10px;
+          padding: 1px;
+          .fa-times-circle {
+            color: #fff;
+            padding: 10px;
+            }
+        }
+
+      }
+      .modal_menu_list {
+        padding: 0 20px;
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0;
+          width: 100%;
+          li {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            font-size: 3rem;
+            width: 80%;
+            margin: 0 auto;
+            padding: 5px;
+            .logout {
+              color: #fff;
+              a {
+                color: #fff;
+                &:visited {
+                  color: #fff;
+                }
+              }
+            }
+            a:visited {
+              color: #fff;
+            }
+          }
+          .hidden {
+            display: none;
+          }
+        }
+      }
+  }
+  }
+  /********************************** 
+  *            レスポンシブ           *
+  ***********************************/ 
+  @media screen and (max-width: 580px) {
+    header{
+
+      .header-menus {
+        font-size: 1rem;
+        .header_menu_list {
+          display: none;
+        }
+        .fa-bars {
+          display: block;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    
+    .photo_frame {
+      /* border: 1px solid #000; */
+      display: flex;
+      flex-direction: row;
+      // justify-content: flex-start;
+      // align-items: center;
+      width: 100%;
+      img {
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }

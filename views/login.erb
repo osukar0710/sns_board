@@ -1,0 +1,20 @@
+
+<div class="login_msg">
+    <p>
+        登録がまだの方は<a href="/signup" class="login_link_msg">こちら</a>から登録お願いします。
+    </p>
+</div>
+<form action="/login" method="post">
+<%= csrf_tag %>
+    <div class="form_wrap">
+        <div class="form_inner">
+            <label for="name">name:</label>
+            <input type="text" name="name" id="name" />
+            <label for="password">password:</label>
+            <input type="password" name="password" id="password"/>
+        </div>
+        <div class="btn_wrap">
+            <input type="submit" value="ログイン" class="btn">
+        </div>
+    </div>
+</form>

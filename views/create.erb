@@ -1,0 +1,18 @@
+<div class="msg_inner">
+    <h2 class="home_msg">投稿画面</h2>
+    <p class="flash_msg"><%= flash[:msg]%></p>
+</div>
+<form action="/create" method="post">
+<%= csrf_tag %>
+    <div class="form_wrap">
+        <div class="form_inner">
+            <label>タイトル(<span class="alert_msg">※30文字以内</span>):</label>
+            <input type="text" name="title">
+            <label>内容(<span class="alert_msg">※100文字以内</span>):</label>
+            <textarea name="content"></textarea>
+        </div>
+        <div class="btn_wrap">
+            <input type="submit" value="投稿" class="btn">
+        </div>
+    </div>
+</form>
