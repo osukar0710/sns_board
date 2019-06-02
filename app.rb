@@ -284,11 +284,11 @@ post '/mypage' do
         FileUtils.mv(tmp, "./public/img/#{filename}")
         filepath = "img/#{filename}"
 
-        # 既存ファイル削除
+         # 既存ファイル削除
         users.each do |user|
             if user['name'] == session[:name]
                 file = user['img_path']
-                if file != 'default.png'
+                if user['img_path'] != 'img/default.png'
                     FileUtils.rm("./public/#{file}")
                 end
             end
