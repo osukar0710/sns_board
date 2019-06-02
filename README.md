@@ -11,5 +11,7 @@ Sinatraで制作した簡易掲示板サイト
 - CSRF対策　
 - SQLインジェクション対策　：エスケープ処理、バリデーションチェック　
 
+##DEMO MOVE
+![circleanimationmuvie](https://github.com/osukar0710/sns_board/blob/master/sns_board.mov.gif)
 ## Licence
 MIT　Licence
