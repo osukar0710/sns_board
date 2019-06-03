@@ -39,8 +39,8 @@ bundler install
 createdb codebase_task
 ```
 事前にpostgeSQLは起動しておく
-起動：`brew services start postgresql`
-停止：`brew services stop postgresql`
+- 起動：`brew services start postgresql`
+- 停止：`brew services stop postgresql`
 `app.rb`内のファイルのデータベース」接続名は`codebase_task`で作成したいるため。
 名称は任意です。
 
