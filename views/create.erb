@@ -3,7 +3,6 @@
     <p class="flash_msg"><%= flash[:msg]%></p>
 </div>
 <form action="/create" method="post">
-<%= csrf_tag %>
     <div class="form_wrap">
         <div class="form_inner">
             <label>タイトル(<span class="alert_msg">※30文字以内</span>):</label>
