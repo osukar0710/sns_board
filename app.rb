@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
 require 'rack/flash'
-require 'rack/csrf'
+# require 'rack/csrf'
 require 'fileutils'
 # 乱数生成用
 require 'securerandom' 
@@ -14,9 +14,7 @@ configure do
     use Rack::Flash
 end
 #  csrf利用
-use Rack::Csrf, raise: true
-
-
+# use Rack::Csrf, raise: true
 
 # postgresql接続
 client = PG::connect(
@@ -27,13 +25,13 @@ client = PG::connect(
 
 # ====== 関数化 ======
 helpers do
-    # csrf対策
-    def csrf_tag
-        Rack::Csrf.csrf_tag(env)
-    end
-    def csrf_token
-        Rack::Csrf.csrf_token(env)
-    end
+    # # csrf対策
+    # def csrf_tag
+    #     Rack::Csrf.csrf_tag(env)
+    # end
+    # def csrf_token
+    #     Rack::Csrf.csrf_token(env)
+    # end
     # エスケープ処理
     def h(str)
         Rack::Utils.escape_html(str)
@@ -284,7 +282,7 @@ post '/mypage' do
         FileUtils.mv(tmp, "./public/img/#{filename}")
         filepath = "img/#{filename}"
 
-         # 既存ファイル削除
+        # 既存ファイル削除
         users.each do |user|
             if user['name'] == session[:name]
                 file = user['img_path']
@@ -318,7 +316,6 @@ post "/likes" do
     puts "========"
     puts "boardID: #{params[:board_id]}"
     puts "likesCOUNT: #{params[:likes_count]}"
-    puts "sessionID: #{session[:id]}"
     puts "========"
 
     if session[:name].nil?
@@ -335,7 +332,10 @@ post "/likes" do
         FROM likes
         WHERE board_id = #{$board_id} AND user_id = #{$user_id}
         ")
-
+        puts "==========="
+        puts likes_user.to_a
+        puts likes_user.any?
+        puts "==========="
     # いいね追加と削除
     if likes_user.any?
         # 削除
