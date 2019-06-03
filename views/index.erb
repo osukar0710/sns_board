@@ -26,7 +26,7 @@
     <%# 掲示板リスト %>
     <ul>
         <% @board_list.each do |item|%>
-            <li class="list_item" data-boardid="<%= item['board_id']%>" data-token="<%= csrf_token %>">
+            <li class="list_item" data-boardid="<%= item['board_id']%>">
                 <% @isView = 'style="display:none;' %>
                 <% if item['name'] == session[:name]
                     @isView = ''
