@@ -31,6 +31,7 @@ Sinatraで制作した簡易掲示板サイト
 gem install bundler
 ```
 > 必要なGemインストール (ここでsinatraもインストール)
+Gemfileがあるディレクトリ内で
 ```
 bundler install
 ```
@@ -57,6 +58,7 @@ psql `codebase_task`でデータベースにログイン
 ```
 
 > sinatra起動
+app.rbがあるディレクトリ内で
 ```
 ruby app.rb -o 0.0.0.0
 ```
