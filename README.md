@@ -10,6 +10,11 @@ Sinatraで制作した簡易掲示板サイト
 - ユーザー編集機能
 - SQLインジェクション対策　：エスケープ処理、バリデーションチェック　
 
+# 使用したスキル
+- HTML/CSS/javascript/jQuery
+- Ruby/sinatra
+- PostgreSQL
+
 ##DEMO MOVE
 
 ![circleanimationmuvie](https://github.com/osukar0710/sns_board/blob/master/sns_board.mov.gif)
@@ -57,12 +62,6 @@ app.rbがあるディレクトリ内で
 ```
 ruby app.rb -o 0.0.0.0
 ```
-# 使用したスキル
-- HTML/CSS/javascript/jQuery
-- Ruby/sinatra
-- PostgreSQL
-
-# 実装内容
 
 ## Licence
 MIT　Licence
