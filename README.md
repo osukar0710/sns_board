@@ -1,10 +1,7 @@
 # 機能
-簡易掲示板 
-
-## ツール概要（Overview）
 Sinatraで制作した簡易掲示板サイト
 
-## 説明（Description）
+# 実装内容
 - ログイン/ログアウト機能　
 - 画像投稿機能　
 - 掲示板投稿機能
@@ -18,10 +15,9 @@ Sinatraで制作した簡易掲示板サイト
 ![circleanimationmuvie](https://github.com/osukar0710/sns_board/blob/master/sns_board.mov.gif)
 
 
-## 使い方(Usage)
+# 使い方
 
 開発環境
-
     ruby 2.6.2
     psql (PostgreSQL) 11.2
 
@@ -61,9 +57,12 @@ app.rbがあるディレクトリ内で
 ```
 ruby app.rb -o 0.0.0.0
 ```
-　# 使用したスキル
- HTML
+# 使用したスキル
+- HTML/CSS/javascript/jQuery
+- Ruby/sinatra
+- PostgreSQL
 
+# 実装内容
 
 ## Licence
 MIT　Licence
