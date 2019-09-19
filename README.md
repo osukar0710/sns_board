@@ -1,5 +1,5 @@
-# sns_board
- Common bulletin board site. Easy to make with sinatra
+# 機能
+簡易掲示板 
 
 ## ツール概要（Overview）
 Sinatraで制作した簡易掲示板サイト
@@ -11,7 +11,6 @@ Sinatraで制作した簡易掲示板サイト
 - 削除機能　
 - (Twitterなどの)いいね機能
 - ユーザー編集機能
-- CSRF対策　
 - SQLインジェクション対策　：エスケープ処理、バリデーションチェック　
 
 ##DEMO MOVE
@@ -62,7 +61,8 @@ app.rbがあるディレクトリ内で
 ```
 ruby app.rb -o 0.0.0.0
 ```
-
+　# 使用したスキル
+ HTML
 
 
 ## Licence
